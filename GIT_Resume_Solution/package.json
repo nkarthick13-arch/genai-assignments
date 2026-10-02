@@ -1,0 +1,41 @@
+{
+  "name": "resume-rag-backend",
+  "version": "1.0.0",
+  "description": "Resume RAG backend with ingestion and retrieval phases",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "ingest:resumes": "npm run build && node dist/modules/ingestion/scripts/ingestResumeFolder.js",
+    "start": "node dist/server.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "resume",
+    "rag",
+    "mongodb",
+    "typescript",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mammoth": "^1.13.0",
+    "mongodb": "^6.0.0",
+    "multer": "^2.4.0",
+    "pdf-parse": "^2.4.5",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.5",
+    "@types/express": "^5.0.0",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^22.10.2",
+    "@types/uuid": "^10.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  }
+}
